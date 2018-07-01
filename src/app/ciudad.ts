@@ -1,13 +1,11 @@
 export class Ciudad{
-
     id: number;
-    nombre: string;
-   
+    ciudad: string;
 
-    constructor(id: number, nombre:string){
-                
-                this.id = id;
-                this.nombre = nombre;
+
+    constructor(id: number, ciudad: string){
+    this.id = id;
+    this.ciudad = ciudad;
+
     }
-
 }

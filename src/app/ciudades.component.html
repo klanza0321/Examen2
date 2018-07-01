@@ -1,64 +1,75 @@
 <div class="jumbotron">
     <h1 class="text-center">
-      Ciudades
+      Temperatura de la Ciudad que usted desee!!!
     </h1>
   </div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Ciudades
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>3601783</td>
-        <td>San Pedro Sula
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            </button>
-        </td>
-      </tr>
-      <tr>
-        <td>2643743</td>
-        <td>Londres</td>
-      </tr>
-      <tr>
-        <td>2968815</td>
-        <td>Paris</td>
-      </tr>
-      <tr>
-        <td>5128638</td>
-        <td>Nueva York</td>
-      </tr>
-      <tr>
-        <td>1850147</td>
-        <td>Tokyo</td>
-      </tr>
-      <tr>
-        <td>2147714</td>
-        <td>Sydney</td>
-      </tr>
-      <tr>
-        <td>3435910</td>
-        <td>Buenos Aires</td>
-      </tr>
-      <tr>
-        <td>3451190</td>
-        <td>Rio de Janeiro</td>
-      </tr>
-      <tr>
-        <td>2950158</td>
-        <td>Berlin</td>
-      </tr>
-      <tr>
-        <td>5601538</td>
-        <td>Moscu</td>
-      </tr>
-      <tr>
-        <td>292223</td>
-        <td>Dubai</td>
-      </tr> 
-    </tbody>
-  </table>
+
+
+<div class="form-group col-md-4" >
+    <label for="inputState">Seleccione Ciudad</label>
+    <select id="inputState" class="form-control" #ciudad>
+        <option selected>...</option>
+        <option value="3601783">San Pedro Sula</option>
+        <option value="2643743">Londres</option>
+        <option value="2968815">Paris</option>
+        <option value="5128638">Nueva York</option>
+        <option value="1850147">Tokyo</option>
+        <option value="2147714">Sydney</option>
+        <option value="3435910">Buenos Aires</option>
+        <option value="3451190">Rio de Janeiro</option>
+        <option value="2950158">Berlin</option>
+        <option value="5601538">Moscu</option>
+        <option value="292223">Dubai</option>
+    </select>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="Clima(ciudad.value)" data-toggle="modal" data-target="#Temperatura">Cargar datos</button>
+
+
+<br>
+<br>
+
+
+<div class="form-row">
+    <div class="form-group col-md-2" class="text-center">
+        <label>Temperatura ℃</label>
+        <input [(ngModel)]="climas.main.temp" [ngModelOptions]="{standalone: true}" class="form-control mb-2" readonly/>
+    </div>
+
+    <div class="form-group col-md-2 " class="text-center">
+            <label>Humedad</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">%</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" [(ngModel)]="climas.main.humidity" [ngModelOptions]="{standalone: true}"
+                    readonly>
+            </div>
+        </div>
+    
+
+    <div class="form-group col-md-2" class="text-center">
+        <label>Temperatura Maxima</label>
+        <input [(ngModel)]="climas.main.temp_max" [ngModelOptions]="{standalone: true}" class="form-control mb-2" readonly/>
+    </div>
+</div>
+
+<div class="form-row">
+
+    <div class="form-group col-md-2" class="text-center">
+        <label>Temperatura Minima</label>
+        <input [(ngModel)]="climas.main.temp_min" [ngModelOptions]="{standalone: true}" class="form-control mb-2" readonly/>
+    </div>
+
+    <div class="form-group col-md-4" class="text-center">
+        <label>Nubes</label>
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">%</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" [(ngModel)]="climas.clouds.all" [ngModelOptions]="{standalone: true}"
+                readonly>
+        </div>
+    </div>
+</div>
